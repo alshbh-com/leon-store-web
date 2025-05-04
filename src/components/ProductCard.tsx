@@ -1,14 +1,16 @@
 
 import { Link } from "react-router-dom";
 
-interface ImageCardProps {
+interface ProductCardProps {
   id: string;
   image: string;
   title: string;
+  price?: number;
+  code?: string;
   category?: string;
 }
 
-const ImageCard = ({ id, image, title, category }: ImageCardProps) => {
+const ProductCard = ({ id, image, title, price, code, category }: ProductCardProps) => {
   return (
     <Link to={`/products/${id}`} className="group">
       <div className="image-card bg-background rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
@@ -26,10 +28,16 @@ const ImageCard = ({ id, image, title, category }: ImageCardProps) => {
         </div>
         <div className="p-4 border-t border-gray-800">
           <h3 className="font-semibold text-foreground mb-1 truncate">{title}</h3>
+          {price && (
+            <div className="flex items-center justify-between">
+              <span className="text-neon font-bold">{price} جنيه</span>
+              {code && <span className="text-xs text-gray-400">كود: {code}</span>}
+            </div>
+          )}
         </div>
       </div>
     </Link>
   );
 };
 
-export default ImageCard;
+export default ProductCard;

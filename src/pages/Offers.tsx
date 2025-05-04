@@ -94,7 +94,7 @@ const Offers = () => {
                   <ProductCard
                     id={product.id}
                     image={product.image}
-                    name={product.name}
+                    title={product.name}
                     price={product.price}
                     code={product.code}
                     category={product.category}
