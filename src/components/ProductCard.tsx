@@ -1,39 +1,35 @@
 
 import { Link } from "react-router-dom";
 
-interface ProductCardProps {
+interface ImageCardProps {
   id: string;
   image: string;
-  name: string;
-  price: number;
-  code: string;
-  category: string;
+  title: string;
+  category?: string;
 }
 
-const ProductCard = ({ id, image, name, price, code, category }: ProductCardProps) => {
+const ImageCard = ({ id, image, title, category }: ImageCardProps) => {
   return (
     <Link to={`/products/${id}`} className="group">
-      <div className="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+      <div className="image-card bg-background rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
         <div className="relative overflow-hidden h-64">
           <img
             src={image}
-            alt={name}
+            alt={title}
             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute top-2 left-2 bg-dark text-neon text-xs font-bold px-2 py-1 rounded">
-            كود: {code}
-          </div>
+          {category && (
+            <div className="absolute top-2 left-2 bg-dark/80 text-neon text-xs font-bold px-2 py-1 rounded">
+              {category}
+            </div>
+          )}
         </div>
-        <div className="p-4 border-t border-gray-200">
-          <h3 className="font-semibold text-gray-800 mb-1 truncate">{name}</h3>
-          <div className="flex justify-between items-center">
-            <p className="text-neon font-bold">{price} جنيه</p>
-            <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{category}</span>
-          </div>
+        <div className="p-4 border-t border-gray-800">
+          <h3 className="font-semibold text-foreground mb-1 truncate">{title}</h3>
         </div>
       </div>
     </Link>
   );
 };
 
-export default ProductCard;
+export default ImageCard;
