@@ -26,7 +26,7 @@ const Footer = () => {
               نوفر لكم أفضل الملابس والأحذية بجودة ممتازة وبأسعار مناسبة. نسعى دائمًا لتحقيق رضا عملائنا وتقديم خدمة مميزة.
             </p>
             <div className="flex space-x-4 rtl:space-x-reverse">
-              <a href="https://facebook.com/leonstore" className="bg-white/10 hover:bg-neon hover:text-dark p-2 rounded-full transition-colors">
+              <a href="https://www.facebook.com/share/16ShDdURAS/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-neon hover:text-dark p-2 rounded-full transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="tel:01012300358" className="bg-white/10 hover:bg-neon hover:text-dark p-2 rounded-full transition-colors">
@@ -57,6 +57,9 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="hover:text-neon transition-colors inline-block">اتصل بنا</Link>
               </li>
+              <li>
+                <a href="https://www.facebook.com/share/16ShDdURAS/" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors inline-block">تابعنا على فيسبوك</a>
+              </li>
             </ul>
           </div>
 
@@ -75,6 +78,12 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="h-5 w-5 ml-2 text-neon" />
                 <span>info@leonstore.com</span>
+              </li>
+              <li className="flex items-center">
+                <Facebook className="h-5 w-5 ml-2 text-neon" />
+                <a href="https://www.facebook.com/share/16ShDdURAS/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  تابعنا على فيسبوك
+                </a>
               </li>
             </ul>
             <div className="mt-4 p-3 bg-black/30 rounded-md">
